@@ -26,6 +26,7 @@ public class Messages
         config.addDefault("prefix", "&b[AutoMiner]&f");
         config.addDefault("item-name", "&b&lAuto&f&lMiner");
         config.addDefault("mining-interval-in-seconds", 10);
+        config.addDefault("place-chest", "&7Please place a chest on top of the miner for it to start mining.");
 
         plugin.saveConfig();
     }
