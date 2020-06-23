@@ -1,0 +1,6 @@
+name: AutoMiner
+version: ${project.version}
+main: de.marvinleiers.autominer.AutoMiner
+api-version: 1.15
+authors: [Marvin2k0]
+website: www.marvinleiers.de
