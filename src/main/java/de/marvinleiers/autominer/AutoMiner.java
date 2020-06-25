@@ -30,22 +30,43 @@ public final class AutoMiner extends JavaPlugin
     @Override
     public void onDisable()
     {
-        // Plugin shutdown logic
     }
 
     private void addRecipies()
     {
         ItemStack autominer = new ItemStack(Material.DISPENSER);
         ItemMeta meta = autominer.getItemMeta();
-        meta.setDisplayName(Messages.get("item-name", false));
+        meta.setDisplayName("§6Gold " + Messages.get("item-name", false));
         autominer.setItemMeta(meta);
 
-        ShapedRecipe emeraldRecipe = new ShapedRecipe(new NamespacedKey(this, "Marvin2k0_AutoMiner"), autominer);
-        emeraldRecipe.shape("D", "H", "G");
-        emeraldRecipe.setIngredient('D', new ItemStack(Material.DISPENSER).getData());
-        emeraldRecipe.setIngredient('H', new ItemStack(Material.HOPPER).getData());
-        emeraldRecipe.setIngredient('G', new ItemStack(Material.GOLDEN_PICKAXE).getData());
+        ShapedRecipe goldenPickaxe = new ShapedRecipe(new NamespacedKey(this, "Marvin2k0_AutoMiner_gold"), autominer);
+        goldenPickaxe.shape("D", "H", "G");
+        goldenPickaxe.setIngredient('D', new ItemStack(Material.DISPENSER).getData());
+        goldenPickaxe.setIngredient('H', new ItemStack(Material.HOPPER).getData());
+        goldenPickaxe.setIngredient('G', new ItemStack(Material.GOLDEN_PICKAXE).getData());
 
-        Bukkit.addRecipe(emeraldRecipe);
+        Bukkit.addRecipe(goldenPickaxe);
+
+        meta.setDisplayName("§bDiamond " + Messages.get("item-name", false));
+        autominer.setItemMeta(meta);
+
+        ShapedRecipe diamnondPickaxe = new ShapedRecipe(new NamespacedKey(this, "Marvin2k0_AutoMiner_dia"), autominer);
+        diamnondPickaxe.shape("D", "H", "G");
+        diamnondPickaxe.setIngredient('D', new ItemStack(Material.DISPENSER).getData());
+        diamnondPickaxe.setIngredient('H', new ItemStack(Material.HOPPER).getData());
+        diamnondPickaxe.setIngredient('G', new ItemStack(Material.DIAMOND_PICKAXE).getData());
+
+        Bukkit.addRecipe(diamnondPickaxe);
+
+        meta.setDisplayName("§fIron " + Messages.get("item-name", false));
+        autominer.setItemMeta(meta);
+
+        ShapedRecipe ironPickaxe = new ShapedRecipe(new NamespacedKey(this, "Marvin2k0_AutoMiner_iron"), autominer);
+        ironPickaxe.shape("D", "H", "G");
+        ironPickaxe.setIngredient('D', new ItemStack(Material.DISPENSER).getData());
+        ironPickaxe.setIngredient('H', new ItemStack(Material.HOPPER).getData());
+        ironPickaxe.setIngredient('G', new ItemStack(Material.IRON_PICKAXE).getData());
+
+        Bukkit.addRecipe(ironPickaxe);
     }
 }

@@ -7,7 +7,6 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.Chest;
 import org.bukkit.block.Dispenser;
-import org.bukkit.craftbukkit.v1_15_R1.block.CraftBlock;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -29,7 +28,7 @@ public class BuildPlaceListener implements Listener
         if (block.getType() != Material.DISPENSER)
             return;
 
-        if (!minerItem.hasItemMeta() || !minerItem.getItemMeta().getDisplayName().equalsIgnoreCase(Messages.get("item-name", false)))
+        if (!minerItem.hasItemMeta() || !minerItem.getItemMeta().getDisplayName().contains(Messages.get("item-name", false)))
             return;
 
         Dispenser dispenser = (Dispenser) block.getState();
@@ -62,9 +61,14 @@ public class BuildPlaceListener implements Listener
 
                     if (miningBlock.getType() != Material.AIR)
                     {
+                        ItemStack mining = new ItemStack(Material.IRON_PICKAXE);
 
+                        if (minerItem.getItemMeta().getDisplayName().contains("Diamond"))
+                            mining = new ItemStack(Material.DIAMOND_PICKAXE);
+                        else if (minerItem.getItemMeta().getDisplayName().contains("Gold"))
+                            mining = new ItemStack(Material.GOLDEN_PICKAXE);
 
-                        Collection<ItemStack> drops = miningBlock.getDrops(new ItemStack(Material.DIAMOND_PICKAXE));
+                        Collection<ItemStack> drops = miningBlock.getDrops(mining);
                         miningBlock.setType(Material.AIR);
 
                         for (ItemStack item : drops)
