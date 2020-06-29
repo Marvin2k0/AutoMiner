@@ -251,10 +251,12 @@ public final class AutoMiner extends JavaPlugin
         goldMiner = autominer.clone();
 
         ShapedRecipe goldenPickaxe = new ShapedRecipe(new NamespacedKey(this, "Marvin2k0_AutoMiner_gold"), autominer);
-        goldenPickaxe.shape("D", "H", "G");
+        goldenPickaxe.shape("BDB", "RHR", "BPB");
         goldenPickaxe.setIngredient('D', new ItemStack(Material.DISPENSER).getData());
+        goldenPickaxe.setIngredient('R', new ItemStack(Material.REDSTONE).getData());
+        goldenPickaxe.setIngredient('P', new ItemStack(Material.GOLDEN_PICKAXE).getData());
         goldenPickaxe.setIngredient('H', new ItemStack(Material.HOPPER).getData());
-        goldenPickaxe.setIngredient('G', new ItemStack(Material.GOLDEN_PICKAXE).getData());
+        goldenPickaxe.setIngredient('B', new ItemStack(Material.GOLD_BLOCK).getData());
 
         Bukkit.addRecipe(goldenPickaxe);
 
@@ -263,10 +265,12 @@ public final class AutoMiner extends JavaPlugin
         diamondMiner = autominer.clone();
 
         ShapedRecipe diamnondPickaxe = new ShapedRecipe(new NamespacedKey(this, "Marvin2k0_AutoMiner_dia"), autominer);
-        diamnondPickaxe.shape("D", "H", "G");
+        diamnondPickaxe.shape("BDB", "RHR", "BPB");
         diamnondPickaxe.setIngredient('D', new ItemStack(Material.DISPENSER).getData());
         diamnondPickaxe.setIngredient('H', new ItemStack(Material.HOPPER).getData());
-        diamnondPickaxe.setIngredient('G', new ItemStack(Material.DIAMOND_PICKAXE).getData());
+        diamnondPickaxe.setIngredient('R', new ItemStack(Material.REDSTONE).getData());
+        diamnondPickaxe.setIngredient('B', new ItemStack(Material.DIAMOND_BLOCK).getData());
+        diamnondPickaxe.setIngredient('P', new ItemStack(Material.DIAMOND_PICKAXE).getData());
 
         Bukkit.addRecipe(diamnondPickaxe);
 
@@ -275,10 +279,12 @@ public final class AutoMiner extends JavaPlugin
         ironMiner = autominer.clone();
 
         ShapedRecipe ironPickaxe = new ShapedRecipe(new NamespacedKey(this, "Marvin2k0_AutoMiner_iron"), autominer);
-        ironPickaxe.shape("D", "H", "G");
+        ironPickaxe.shape("BDB", "RHR", "BPB");
         ironPickaxe.setIngredient('D', new ItemStack(Material.DISPENSER).getData());
         ironPickaxe.setIngredient('H', new ItemStack(Material.HOPPER).getData());
-        ironPickaxe.setIngredient('G', new ItemStack(Material.IRON_PICKAXE).getData());
+        ironPickaxe.setIngredient('R', new ItemStack(Material.REDSTONE).getData());
+        ironPickaxe.setIngredient('B', new ItemStack(Material.IRON_BLOCK).getData());
+        ironPickaxe.setIngredient('P', new ItemStack(Material.IRON_PICKAXE).getData());
 
         Bukkit.addRecipe(ironPickaxe);
     }
